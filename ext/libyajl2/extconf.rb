@@ -93,11 +93,11 @@ EOF
 
       # on windows the Makefile will try to export Init_libyajl which is wrong because we aren't a ruby lib.
       # i could not figure out how to tell mkmf.rb to stop being so helpful, so instead will just patch it here.
-      if windows?
-        makefile = IO.read("Makefile")
-        makefile.gsub!(/\$\(DEFFILE\)/, '')
-        File.open("Makefile", 'w+') {|f| f.write(makefile) }
-      end
+#      if windows?
+#        makefile = IO.read("Makefile")
+#        makefile.gsub!(/\$\(DEFFILE\)/, '')
+#        File.open("Makefile", 'w+') {|f| f.write(makefile) }
+#      end
 
       system("pwd")
       # we cheat and build it right away...
